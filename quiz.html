@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Quiz - Faith Quest</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="top small-top">
+      <a class="back" href="levels.html">&larr; Levels</a>
+      <div id="quizTitle" class="small">Quiz</div>
+    </header>
+
+    <section class="card">
+      <div class="quiz-top">
+        <div id="progressWrap"><div id="progressBar" class="progressBar" style="width:0%"></div></div>
+        <div id="scoreBoard" class="small">Score: 0</div>
+      </div>
+      <div id="qcard" class="qcard"></div>
+
+      <div class="controls">
+        <div class="controlBtns">
+          <button class="btn" id="prevBtn">Previous</button>
+          <button class="btn" id="nextBtn">Next</button>
+          <button class="btn" id="endBtn">End</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<script src="questions.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Level - Faith Quest</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="top small-top">
+      <a class="back" href="categories.html">&larr; Categories</a>
+      <h2>Choose Difficulty</h2>
+    </header>
+
+    <section class="card center">
+      <div class="row">
+        <a class="btn" id="easy">Easy</a>
+        <a class="btn" id="moderate">Moderate</a>
+        <a class="btn" id="difficult">Difficult</a>
+      </div>
+      <div class="mt small">Your quiz will start immediately after choosing a level.</div>
+    </section>
+  </main>
+
+<script>
+  const qs = location.search.replace(/^\?/, '');
+  function link(el,id){ document.getElementById(id).href = `quiz.html?${qs}${qs? '&':''}level=${el}`; }
+  link('easy','easy'); link('moderate','moderate'); link('difficult','difficult');
+</script>
+</body>
+</html>

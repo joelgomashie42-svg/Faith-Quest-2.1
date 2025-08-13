@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Choose a Book - Faith Quest</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="top small-top">
+      <a class="back" href="categories.html">&larr; Categories</a>
+      <h2>Choose a Book</h2>
+    </header>
+
+    <section class="card">
+      <div id="bookGrid" class="row center"></div>
+    </section>
+  </main>
+
+<script src="questions.js"></script>
+<script>
+  function param(n){const u=new URLSearchParams(location.search);return u.get(n);}
+  const test = (param('testament')||'old').toUpperCase();
+  const list = (window.BOOKS && window.BOOKS[test]) || [];
+  const grid = document.getElementById('bookGrid');
+  list.forEach(b=>{
+    const a=document.createElement('a');
+    a.className='btn';
+    a.textContent=b.name;
+    a.href=`levels.html?category=book&book=${encodeURIComponent(b.key)}`;
+    grid.appendChild(a);
+  });
+</script>
+</body>
+</html>

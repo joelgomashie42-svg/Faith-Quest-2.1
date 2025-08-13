@@ -1,0 +1,43 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Results - Faith Quest</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="top small-top">
+      <a class="back" href="index.html">&larr; Home</a>
+      <h2>Quiz Result</h2>
+    </header>
+
+    <section class="card">
+      <div id="resultText"></div>
+      <div class="actions mt">
+        <a class="btn primary" id="playAgain">Play Again</a>
+        <a class="btn" href="index.html">Home</a>
+      </div>
+      <div class="mt">
+        <h4>Review Wrong Answers</h4>
+        <div id="wrongList"></div>
+      </div>
+    </section>
+  </main>
+
+<script>
+const r = JSON.parse(localStorage.getItem('faith_last_result') || '{}');
+document.getElementById('resultText').innerText = r.score!=null
+  ? `You scored ${r.score} out of ${r.total} (${r.title})`
+  : 'No recent result found.';
+const wl = document.getElementById('wrongList');
+(r.wrong || []).forEach(w=>{
+  const d=document.createElement('div');
+  d.className='card';
+  d.innerHTML=`<strong>${w.q}</strong><div class="small">Correct: ${w.correct} • Your: ${w.your}</div>`;
+  wl.appendChild(d);
+});
+document.getElementById('playAgain').href = `levels.html?category=${encodeURIComponent(r.type || 'general')}`;
+</script>
+</body>
+</html>

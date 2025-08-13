@@ -1,0 +1,51 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Faith Quest</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <!-- Splash -->
+  <div id="splash" class="splash-screen">
+    <div class="splash-center">
+      <div id="splashIconWrap" class="icon-holder hidden">
+        <img id="splashIcon" src="assets/faith-quest-icon.png" alt="Faith Quest">
+      </div>
+      <div id="title-wrap" class="title-wrap" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- Home -->
+  <main id="main" class="main-screen hidden">
+    <header class="top">
+      <img class="logo" src="assets/icon-72.png" alt="Faith Quest logo">
+      <h1>Faith Quest</h1>
+      <div class="tag">Grow in Grace &amp; Truth</div>
+    </header>
+
+    <section class="card center">
+      <h2>Sharpen your Bible knowledge</h2>
+      <p class="lead">Pick a mode and start the quest!</p>
+      <div class="actions">
+        <a class="btn primary large" href="categories.html">Start Quiz</a>
+        <a class="btn large" href="about.html">About</a>
+      </div>
+      <div class="verse-card"><div id="verse" class="verse">Loading verse...</div></div>
+    </section>
+
+    <footer class="footer">Offline after first load • PWA ready</footer>
+  </main>
+
+<script src="questions.js"></script>
+<script src="js/splash.js"></script>
+<script>
+// Register SW
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+</body>
+</html>
